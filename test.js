@@ -55,3 +55,42 @@ console.log("Foo" && "Bar" && "string");// Foo(true) AND Bar(true) returns Bar
 console.log(false && "Foo");// false && Foo(true) returns false
 console.log("Foo" && false);// Foo(true) && false returns false
 console.log(false && (1 == 2));// false && false(1==2) returns false
+
+console.log(0 && "Foo"); //First operand is falsy - return it
+console.log("Foo" && "Bar"); //First operand is truthy, return the second operand
+console.log(0 || "Foo"); //First operand is falsy - return second operand
+console.log("Foo" || "Bar"); //First operand is truthy, return it
+console.log({} || false);
+
+function greeting(name) {
+    if(name === undefined) {
+        names = "john"
+    }
+    
+    names = name || "John";
+    console.log(name);
+    console.log("Hello " + names);
+}
+greeting("Johnson"); // alerts "Hi Johnson";
+greeting(); //alerts "Hello John"
+
+function isAllowedToDrive(age) {
+    if (age > 21) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(isAllowedToDrive(22));
+function sayDay(day) {
+    switch (day) {
+        case 1: console.log("Sunday");
+            break;
+        case 2: console.log("Monday");
+            break;
+        default:
+            console.log("We live in a binary world. Go to Pluto");
+    }
+}
+sayDay(1) //Sunday
+sayDay(3)
