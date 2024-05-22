@@ -63,10 +63,10 @@ console.log("Foo" || "Bar"); //First operand is truthy, return it
 console.log({} || false);
 
 function greeting(name) {
-    if(name === undefined) {
+    if (name === undefined) {
         names = "john"
     }
-    
+
     names = name || "John";
     console.log(name);
     console.log("Hello " + names);
@@ -94,3 +94,79 @@ function sayDay(day) {
 }
 sayDay(1) //Sunday
 sayDay(3)
+
+// function add(a, b) {
+//     return a + b;
+// }
+// c = add(1, 2);
+// console.log(c);
+
+const add = function (a, b) {
+    return a + b;
+}
+c = add(1, 2);
+console.log(c);
+
+function changeCase(val) {
+    return val.toUpperCase();
+}
+function demofunc(a, passfunction) {
+    console.log(passfunction(a));
+}
+demofunc("smallcase", changeCase);
+// const obj = {
+//     name: "mike",
+//     address: ['address1', "address2"],
+//     phone: {
+//         phone1: "9999",
+//         phone2: "8888",
+//         },
+//     zip: function zip(){
+//         return '1456'
+//     }
+// }
+// obj.phone.phone2
+// obj.zip()
+var validateDataForAge = function (data) {
+    person = data();
+    console.log(person.age);
+    if (person.age < 1 || person.age > 99) {
+        return true;
+    } else {
+        return false;
+    }
+};
+var errorHandlerForAge = function (error) {
+    console.log("Error while processing age");
+};
+function parseRequest(data, validateData, errorHandler) {
+    var error = validateData(data);
+    if (!error) {
+        console.log("no errors");
+    } else {
+        errorHandler();
+    }
+}
+var generateDataForScientist = function () {
+    return {
+        name: "Albert Einstein",
+        age: Math.floor(Math.random() * (100 - 1)) + 1,
+    };
+};
+var generateDataForComposer = function () {
+    return {
+        name: "J S Bach",
+        age: Math.floor(Math.random() * (100 - 1)) + 1,
+    };
+};
+parseRequest(generateDataForScientist, validateDataForAge,
+    errorHandlerForAge);
+parseRequest(generateDataForComposer, validateDataForAge,
+    errorHandlerForAge);
+
+    var santa = {
+        say: function () {
+            console.log("ho ho ho");
+        }
+    }
+    santa.say();
