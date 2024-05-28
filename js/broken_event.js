@@ -14,5 +14,6 @@ function noWrapper(e) {
 }
 function onloadHandler() {
     document.getElementById('div1').addEventListener('click', yesWrapper, false);
-    document.getElementById('div2').addEventListener('click', noWrapper, false);
+    document.getElementById('div2').addEventListener('mouseover', noWrapper, false);
+    document.getElementById('div2').addEventListener('mouseout', noWrapper, false);
 }
