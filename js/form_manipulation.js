@@ -26,6 +26,7 @@ $(document).ready(function () {
     });
     $('#resetB').click(function () {
         $('#formB').get(0).reset();
+        $('#formA').trigger('reset');
         $('#formB input:checked').prop('checked', false);
         $('#formB input:image').attr('src', '');
     });
@@ -33,6 +34,7 @@ $(document).ready(function () {
         $('#serialized').html($('#formA').serialize());
         $('#serializedA').empty();
         var arr = $('#formA').serializeArray();
+        console.log(arr)
         jQuery.each(arr, function (i, prop) {
             $('#serializedA').append($('<p>' + prop.name + ' = ' +
                 prop.value + '</p>'));

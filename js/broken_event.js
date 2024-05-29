@@ -10,10 +10,10 @@ function yesWrapper(e) {
 function noWrapper(e) {
     console.log(e.target)
     clickHandler(e, 'heading', 2, 'no');
-    e.target.removeEventListener('click', noWrapper);
+    e.target.removeEventListener('mouseover', noWrapper);
 }
 function onloadHandler() {
     document.getElementById('div1').addEventListener('click', yesWrapper, false);
     document.getElementById('div2').addEventListener('mouseover', noWrapper, false);
-    document.getElementById('div2').addEventListener('mouseout', noWrapper, false);
+    // document.getElementById('div2').addEventListener('mouseout', noWrapper, false);
 }
